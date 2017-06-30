@@ -1,7 +1,7 @@
 # interviewQs
 Collection of technical and non-technical interview questions I've been asked over the many, many years...
 
-* ## Techie
+# Techie
 * ### Algorithms
 * ### C++
 * ### C#
@@ -11,7 +11,7 @@ Collection of technical and non-technical interview questions I've been asked ov
 * ### Python
 * ### Scala
 
-## Non-techie
+# Non-techie
 * ### Agile
 * ### Project-Management
 * ### Team-Building
