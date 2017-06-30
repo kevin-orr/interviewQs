@@ -1,5 +1,9 @@
 # interviewQs
-Collection of technical and non-technical interview questions I've been asked over the many, many years...
+A collection of technical and non-technical interview questions that I've been asked over the years...and there's a good few of them unfortunately!
+
+Each section may have one or more **sub-section**, for example, there is a **Spring** section under the **Java** heading - ah, you get the idea.
+
+Please feel free to use them if you want to and if you've got a few juicy ones then add them!
 
 # Techie
 * ### Algorithms
@@ -11,7 +15,7 @@ Collection of technical and non-technical interview questions I've been asked ov
 * ### Python
 * ### Scala
 
-# Non-techie
+# Non-Techie
 * ### Agile
 * ### Project-Management
 * ### Team-Building
