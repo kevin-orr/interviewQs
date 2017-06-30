@@ -10,7 +10,7 @@ Please feel free to use them if you want to and if you've got a few juicy ones t
 * ### C++
 * ### C#
 * ### Groovy
-* ### Java
+* ### [Java](#/java/collections/map)
 * ### JavaScript
 * ### Python
 * ### Scala
