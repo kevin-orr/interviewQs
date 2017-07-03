@@ -38,6 +38,7 @@ So Spring suggests that you either:
 * Use the AOPContext
 <br>
 The first option might be the best because the second option requires exposing the AOP context which even Spring reckons is expensive.
+
 ```java
     public Map getMap() {
         // do some stuff to get id's - maybe we have to make a RESTful call to get the id's 
