@@ -54,7 +54,7 @@ The first option might be the best because the second option requires exposing t
 }
 ```
 
-* ### *Do my Controler handlers have to be public?*(pcq)<br>
+* ### *Does a Controller's handlers necessarily have to be public?*(pcq)<br>
 Suppose we have the following controller with all mapped handlers having private access level.<br>
 Will this controller still work?
 ```java
