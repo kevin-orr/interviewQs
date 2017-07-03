@@ -54,3 +54,27 @@ The first option might be the best because the second option requires exposing t
 }
 ```
 
+* ### *Do my Controler handlers have to be public?*(pcq)<br>
+Suppose we have the following controller with all mapped handlers having private access level.<br>
+Will this controller still work?
+```java
+@RestController
+@RequestMapping("/appointments")
+public class AppointmentsController {
+    @Autowired
+    private AppointmentBook appointmentBook;
+    
+    @RequestMapping(method = RequestMethod.GET)
+    private Map<String, Appointment> get() {
+        return appointmentBook.getAppointmentsForToday();
+    }
+
+    @RequestMapping(path = "/{day}", method = RequestMethod.GET)
+    private Map<String, Appointment> getForDay(@PathVariable @DateTimeFormat(iso=ISO.DATE) Date day, Model model) {
+        return appointmentBook.getAppointmentsForDay(day);
+    }
+```
+<br>
+Yep! Spring doesn't care what sort of access modifer you have on your controller methods - it will still find them and map the url to the appropriate method.<br> This is kinda opposite to what you might expect given that private methods should be private right? But Spring does all sorts of AOP and introspection to find these methods - I suppose Spring has to ignore encapsulation etc. in order to do what it does.<br>
+
+
