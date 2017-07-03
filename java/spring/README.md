@@ -32,4 +32,24 @@ using AOP, and Spring AOP is proxy based. <br>
 Spring will invoke methods on your object via a *proxy*. 
 <br>However, as soon as you have *self-invocation* - calling your actual object but not via the proxy as we have <br>
 with the *getMapByIds()* call, you're no longer going via the Spring proxy for you object and so you no longer get <br>
-any of the goodies that Spring offers - like caching!  
+any of the goodies that Spring offers - like caching! <br>
+So Spring has 2 solutions here:
+* Refactor your code!
+* Use the AOPContext
+<br>
+The first option might be better because the second option requires exposing the AOP context which even Spring reckons is expensive.
+```java
+    public Map getMap() {
+        // do some stuff to get id's - maybe we have to make a RESTful call to get the id's 
+        // but we can't guaranteed what id's come back.
+        // However, we do know that for whatever id's we have, the getMapByIds() method will
+        // always give us back the same result for the same id's.
+        
+        // now if we go via the Spring proxy (setting expose-proxy="true") the caching will work but at a cost.
+        Map map = ((IMyService) AopContext.currentProxy()).getMapByIds(id1,id2);
+        // maybe do some more work on map before finally returning it
+        return map;
+    }
+}
+```
+
