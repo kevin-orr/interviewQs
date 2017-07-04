@@ -12,7 +12,7 @@ Please feel free to use them if you want to and if you've got a few juicy ones t
 * ### [Java](java/README.md)
 * ### JavaScript
 * ### Python
-* ### Scala
+* ### [Scala](scala/README.md)
 
 # Non-Techie
 * ### Agile
