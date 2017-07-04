@@ -1,5 +1,5 @@
-# Some Scala Q's (pcq)<br>
-### *How might we pass a List[Int] or Vector[Int] to a function that expects variable args?*
+# Some Scala Q's<br>
+### *How might we pass a List[Int] or Vector[Int] to a function that expects variable args? (pcq)*
 For example, suppose we have the function **sum** below. When we try to pass a List[Int] as the argument we get a compiler error.
 ```scala
 def sum(args: Int*) = {
