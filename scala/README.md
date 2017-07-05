@@ -25,3 +25,6 @@ sum(List(1,2,3) :_*) // this now gives 6 as expected
 sum(1 to 3 :_*)      // and this also gives 6 as expected
 ```
 <br>
+
+### *The Scala compiler maps an Array[Int] to what?*
+Because everything in Scala is an object, your first guess might be that it gets maps to Integer[] on the VM but in fact the Scala compiler does some optimisation to make sure it gets mapped to int[]!
