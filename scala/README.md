@@ -40,7 +40,7 @@ same = first.deep == second.deep
 <br>
 
 
-### Q. *Given an array of integers, write a function that returns a new array that has removed all negative numbers except for the first one*<br>
+### Q. *Given an array of integers, write a function that returns a new array with same order as original that has removed all negative numbers except for the first one. What if order isn't important?*<br>
 ```scala
 // So, for example, 
 func(Array(1, -2, -3, 7, -1, 1) // ==> Array(1, -2, 7, 1)
@@ -56,6 +56,15 @@ Now I'm only new to Scala so there's gonna be much more efficient, sexier and co
 def func(array: Array[Int]) : Array[Int] = {
   val splitAtPositionAfterFirstNegative = array.splitAt(array.indexWhere(_ < 0) + 1)
   splitAtPositionAfterFirstNegative._1 ++ (for(i <- splitAtPositionAfterFirstNegative._2 if(i >= 0)) yield i)
+}
+```
+<br>
+if the order isn't important we could do something like this:
+
+```scala
+def func(array: Array[Int]): Array[Int] = {
+  val tups = array.partition(_ >=0)
+  tups._1 ++ tups._2.take(1)
 }
 ```
 
