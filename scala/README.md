@@ -1,5 +1,5 @@
 # Some Scala Q's<br>
-### *How might we pass a List[Int] or Vector[Int] to a function that expects variable args? (pcq)*
+### Q. *How might we pass a List[Int] or Vector[Int] to a function that expects variable args? (pcq)*
 For example, suppose we have the function **sum** below. When we try to pass a List[Int] as the argument we get a compiler error.
 ```scala
 def sum(args: Int*) = {
@@ -26,5 +26,35 @@ sum(1 to 3 :_*)      // and this also gives 6 as expected
 ```
 <br>
 
-### *The Scala compiler maps an Array[Int] to what?*
+### Q. *The Scala compiler maps an Array[Int] to what?*
 Because everything in Scala is an object, your first guess might be that it gets maps to Integer[] on the VM but in fact the Scala compiler does some optimisation to make sure it gets mapped to int[]!
+
+### Q. *How would you compare 2 Arrays?*
+```scala
+val first = Array(1,2,3)
+val second = Array(1,2,3)
+first.deep == second.deep
+```
+<br>
+
+
+### Q. *Given an array of integers, write a function that returns a new array that has removed all negative numbers except for the first one*<br>
+```scala
+// So, for example, 
+func(Array(1, -2, -3, 7, -1, 1) // ==> Array(1, -2, 7, 1)
+func(Array(1, 2, 3, -7)  // ==> Array(1, 2, 3, -7)
+func(Array(1, 2, 3, 7)   // ==> Array(1, 2, 3, 7)
+func(Array(-1, -2, -3, -7) // ==> Array(-1)
+// etc.
+```
+<br>
+Now I'm only new to Scala so there's gonna be much more efficient, sexier and cooler ways to do this but here's an attempt:
+
+```scala
+def func(array: Array[Int]) : Array[Int] = {
+  val splitAtPositionAfterFirstNegative = array.splitAt(array.indexWhere(_ < 0) + 1)
+  splitAtPositionAfterFirstNegative._1 ++ (for(i <- splitAtPositionAfterFirstNegative._2 if(i >= 0)) yield i)
+}
+```
+
+<br>
