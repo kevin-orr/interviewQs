@@ -33,7 +33,9 @@ Because everything in Scala is an object, your first guess might be that it gets
 ```scala
 val first = Array(1,2,3)
 val second = Array(1,2,3)
-first.deep == second.deep
+val same = first.sameElements(second)
+// or
+same = first.deep == second.deep
 ```
 <br>
 
