@@ -54,8 +54,8 @@ Now I'm only new to Scala so there's gonna be much more efficient, sexier and co
 
 ```scala
 def func(array: Array[Int]) : Array[Int] = {
-  val splitAtPositionAfterFirstNegative = array.splitAt(array.indexWhere(_ < 0) + 1)
-  splitAtPositionAfterFirstNegative._1 ++ (for(i <- splitAtPositionAfterFirstNegative._2 if(i >= 0)) yield i)
+  val (up2AndIncludingFirstNegative, afterFirstNegative) = array.splitAt(array.indexWhere(_ < 0) + 1)
+  up2AndIncludingFirstNegative ++ (for(i <- afterFirstNegative if(i >= 0)) yield i)
 }
 ```
 <br>
@@ -63,8 +63,8 @@ if the order isn't important we could do something like this:
 
 ```scala
 def func(array: Array[Int]): Array[Int] = {
-  val tups = array.partition(_ >=0)
-  tups._1 ++ tups._2.take(1)
+  val (positives, negatives) = array.partition(_ >=0)
+  positives ++ negatives.take(1)
 }
 ```
 
