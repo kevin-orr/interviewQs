@@ -1,4 +1,22 @@
 # Some Scala Q's<br>
+### Q. *What's a procedure in Scala?*
+A procedure is a function that doesn't return a value and is really only used for its side effect.
+You can either explicitly include the Unit return type or leave it out along with the =, for example:<br>
+```scala
+def func(name: String) {
+  println(s"Hi there $name")
+}
+```
+<br>or<br>
+```scala
+def func(name: String) : Unit = {
+  println(s"Hi there $name")
+}
+
+```
+<br>
+
+
 ### Q. *How might we pass a List[Int] or Vector[Int] to a function that expects variable args? (pcq)*
 For example, suppose we have the function **sum** below. When we try to pass a List[Int] as the argument we get a compiler error.
 ```scala
