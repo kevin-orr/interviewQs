@@ -40,7 +40,7 @@ same = first.deep == second.deep
 <br>
 
 
-### Q. *Given an array of integers, write a function that returns a new array with same order as original that has removed all negative numbers except for the first one. What if order isn't important?*<br>
+### Q. *Given an array of integers, write a function that returns a new array with same order as original but with all negative numbers removed except for the very first negative number in the collection. What if the order of the elements isn't important?*<br>
 ```scala
 // So, for example, 
 func(Array(1, -2, -3, 7, -1, 1) // ==> Array(1, -2, 7, 1)
