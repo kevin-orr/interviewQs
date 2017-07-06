@@ -54,7 +54,7 @@ def unicodes(s: String): Long = {
 ```
 
 ### Q.10<br>
-
+Now this looks like a candidate for refactoring...
 ```scala
 def x2n(x:Double, n:Int) : Double = {
   if(n < 0) 1.0 / x2n(x, -n)
