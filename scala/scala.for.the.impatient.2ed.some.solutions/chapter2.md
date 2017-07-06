@@ -45,7 +45,7 @@ def unicodes(s: String): Long = {
 }  
 ```
 <br>
-But you could use this which seems even more *functional* :<br>
+But you could use this which seems more *functional* but what would I know:<br>
 
 ```scala
 def unicodes(s: String): Long = {
