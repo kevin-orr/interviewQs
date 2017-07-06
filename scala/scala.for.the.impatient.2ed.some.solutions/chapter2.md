@@ -69,4 +69,27 @@ def x2n(x:Double, n:Int) : Double = {
 ```
 <br>
 
+### Q.11<br>
+```scala
+implicit class DateInterpolator(val sc: StringContext) extends AnyVal {
+
+    def date(args: Any*): LocalDate = {
+      // have we enough args?
+      if (args.length != 3) throw new Exception("Invalid Format: expecting '$year-$month-$day'")
+      val year:Int  = getValueFor("year", args(0))
+      val month:Int = getValueFor("month", args(1))
+      val day:Int   = getValueFor("day", args(2))
+      LocalDate.of(year, month, day)
+    }
+
+    private def getValueFor(yearMonthOrDay:String, s:Any): Int = {
+      try {
+        s.toString.toInt
+      } catch {
+        case _: Exception => throw new Exception(s"$yearMonthOrDay = '$s' is not valid Int")
+      }
+    }
+  }  
+ ```
+<br>
 
