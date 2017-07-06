@@ -27,3 +27,13 @@ def posNeg(aa:Array[Int]) = aa.filter(_ > 0) ++ aa.filter(_ <= 0)
 
 ```
 <br>
+
+
+### Q.5<br>
+
+```scala
+
+def avg(a:Array[Double]) = if(a.length != 0) a.sum/a.length else 0
+
+```
+<br>
