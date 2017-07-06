@@ -37,6 +37,7 @@ def unicodes(s: String): Long = {
 <br>
 
 ### Q.7/8/9<br>
+My initial stab at this was:
 ```scala
 def unicodes(s: String): Long = {
   if(s.length() == 0) 1L
@@ -44,6 +45,13 @@ def unicodes(s: String): Long = {
 }  
 ```
 <br>
+But you could use this which seems even more *functional* :<br>
+
+```scala
+def unicodes(s: String): Long = {
+  s.foldLeft(1L)(_ *_.toLong)   
+}  
+```
 
 ### Q.10<br>
 
