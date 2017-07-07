@@ -90,3 +90,10 @@ def lteqgt(values: Array[Int], v: Int) = (values.filter(_ < v).size, values.filt
 
 ```
 <br>
+
+### Q.10<br>
+Use zip to create a Map where the first array represent *keys* and the second the *values* to be associated with those keys:
+```scala
+"Hello".zip("World").toMap 
+```
+<br>
