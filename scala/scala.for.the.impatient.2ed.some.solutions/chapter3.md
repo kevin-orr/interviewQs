@@ -97,8 +97,8 @@ def positivesAndFirstNeg(array: Array[Int]) : Array[Int] = {
 
 ```scala
 java.util.TimeZone.getAvailableIDs
-								  .filter(_.contains("America"))
-								  .map(_.replace("America/", ""))
-								  .sorted
+		  .filter(_.contains("America"))
+		  .map(_.replace("America/", ""))
+		  .sorted
 ```
 <br>
