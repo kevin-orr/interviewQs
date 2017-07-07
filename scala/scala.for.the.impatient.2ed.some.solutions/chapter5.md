@@ -10,3 +10,21 @@ class Counter {
  
 ```
 <br>
+
+### Q.2<br>
+
+```scala
+
+class BankAccount {
+  private[this] var onDeposit:Double = 0.0  
+  def balance = onDeposit
+  def deposit(deposit:Double) = onDeposit = (onDeposit + deposit)
+  def withdraw(withdraw:Double) :Double = {
+    onDeposit = onDeposit - withdraw
+    onDeposit
+  }
+  override def toString = s"Current Balance on deposit = $onDeposit"
+}
+ 
+```
+<br>
