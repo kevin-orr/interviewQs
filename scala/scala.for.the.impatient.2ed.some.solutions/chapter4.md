@@ -57,3 +57,20 @@ while (in.hasNext()) {
 map.toString
 ```
 <br>
+
+### Q.6<br>
+```scala
+val daysOfWeek = Map[String, Int](("SUNDAY", java.util.Calendar.SUNDAY),
+                                  ("MONDAY", java.util.Calendar.MONDAY),
+                                  ("TUESDAY", java.util.Calendar.TUESDAY),
+                                  ("WEDNESDAY", java.util.Calendar.WEDNESDAY),
+                                  ("THURSDAY", java.util.Calendar.THURSDAY),
+                                  ("FRIDAY", java.util.Calendar.FRIDAY),
+                                  ("SATURDAY", java.util.Calendar.SATURDAY))
+
+val linky = LinkedHashMap[String, Any]()
+for((day,value) <- daysOfWeek) yield linky.put(day,  {println(s"Inserting $day")})
+for((day,value) <- linky) println(day)            
+
+```
+<br>
