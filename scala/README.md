@@ -1,4 +1,7 @@
 # Some Scala Q's<br>
+
+I'm also working through the problems from the excellent book [Scala for the Impatient](scala.for.the.impatient.2ed.some.solutions/README.md) so please feel free to take and look and comment.
+
 ### Q. *What's a procedure in Scala?*
 A procedure is a function that doesn't return a value and is really only used for its side effect.
 You can either explicitly include the Unit return type or leave it out along with the =, for example:<br>
