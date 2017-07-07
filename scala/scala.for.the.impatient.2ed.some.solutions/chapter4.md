@@ -20,3 +20,40 @@ while (in.hasNext()) {
 map.toString
 ```
 <br>
+
+
+### Q.3<br>
+```scala
+lazy val in = new java.util.Scanner(new java.net.URL("http://www.gutenberg.org/files/11/11-0.txt").openStream)
+var map = Map[String, Int]()
+while (in.hasNext()) {
+  val word = in.next()
+  map = map + ((word, map.getOrElse(word, 0) + 1))
+}
+map.toString
+```
+<br>
+
+### Q.4<br>
+```scala
+lazy val in = new java.util.Scanner(new java.net.URL("http://www.gutenberg.org/files/11/11-0.txt").openStream)
+var map = SortedMap[String, Int]()
+while (in.hasNext()) {
+  val word = in.next()
+  map = map + ((word, map.getOrElse(word, 0) + 1))
+}
+map.toString
+```
+<br>
+
+### Q.5<br>
+```scala
+lazy val in = new java.util.Scanner(new java.net.URL("http://www.gutenberg.org/files/11/11-0.txt").openStream)
+var map = TreeMap[String, Int]()
+while (in.hasNext()) {
+  val word = in.next()
+  map = map + ((word, map.getOrElse(word, 0) + 1))
+}
+map.toString
+```
+<br>
