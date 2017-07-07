@@ -60,3 +60,41 @@ Array(1,2,1, 4, 4, 3,4,5).distinct
 ```
 <br>
 
+
+### Q.8<br>
+
+```scala
+
+def positivesAndFirstNeg(a:ArrayBuffer[Int]) = {
+  val ignore = (for(i <- a.indices if(a(i)) < 0) yield i).drop(1).reverse
+  for(i <- ignore) a.remove(i)
+}
+
+```
+<br>
+
+### Q.9<br>
+
+```scala
+def positivesAndFirstNeg(a:ArrayBuffer[Int]) = {
+  val ignore = (for(i <- a.indices if(a(i)) < 0) yield i).drop(1).reverse
+  for(i <- a.indices if(!ignore.contains(i))) yield a(i)
+} 
+
+```
+<br>or, from my [Scala interview type questions](../README.md)<br>
+
+```scala
+def positivesAndFirstNeg(array: Array[Int]) : Array[Int] = {
+  val (up2AndIncludingFirstNegative, afterFirstNegative) = array.splitAt(array.indexWhere(_ < 0) + 1)
+  up2AndIncludingFirstNegative ++ (for(i <- afterFirstNegative if(i >= 0)) yield i)
+}
+
+```
+<br>
+### Q.10<br>
+
+```scala
+
+```
+<br>
