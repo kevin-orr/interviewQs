@@ -37,3 +37,16 @@ def avg(a:Array[Double]) = if(a.length != 0) a.sum/a.length else 0
 
 ```
 <br>
+
+
+### Q.6<br>
+
+```scala
+
+val array = Array(1,2,3,4,5)                      //> array  : Array[Int] = Array(1, 2, 3, 4, 5)
+array.sorted.reverse                              //> res0: Array[Int] = Array(5, 4, 3, 2, 1)
+val arrayBuffer = ArrayBuffer(1,2,3,4,5)          //> arrayBuffer  : scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2,
+arrayBuffer.sorted.reverse                        //> res1: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(5, 4, 3, 2, 1)
+
+```
+<br>
