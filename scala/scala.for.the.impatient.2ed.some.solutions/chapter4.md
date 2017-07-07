@@ -74,3 +74,19 @@ for((day,value) <- linky) println(day)
 
 ```
 <br>
+
+### Q.8<br>
+```scala
+def minmax(values: Array[Int]) = (values.min, values.max)            
+
+```
+<br>
+
+<br>
+
+### Q.9<br>
+```scala
+def lteqgt(values: Array[Int], v: Int) = (values.filter(_ < v).size, values.filter(_ == v).size, values.filter(_ > v).size)
+
+```
+<br>
