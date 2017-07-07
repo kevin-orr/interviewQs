@@ -50,3 +50,13 @@ arrayBuffer.sorted.reverse                        //> res1: scala.collection.mut
 
 ```
 <br>
+
+### Q.7<br>
+
+```scala
+
+Array(1,2,1, 4, 4, 3,4,5).distinct
+
+```
+<br>
+
