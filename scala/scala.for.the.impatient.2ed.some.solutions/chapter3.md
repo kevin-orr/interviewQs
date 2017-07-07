@@ -102,3 +102,11 @@ java.util.TimeZone.getAvailableIDs
 		  .sorted
 ```
 <br>
+
+### Q.11<br>
+On my system (JDK-8u121) I get back a map, hence the call to get values etc.
+```scala
+for(valu <- flavors.getNativesForFlavors(Array(DataFlavor.imageFlavor)).values.toArray) yield valu
+
+```
+<br>
