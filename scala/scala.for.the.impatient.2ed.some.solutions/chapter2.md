@@ -73,6 +73,12 @@ def unicodes(s: String): Long = {
 }  
 ```
 
+In Groovy:
+```groovy
+def unicodes = {s -> s.inject(1){acc, val -> acc * ((int)val).toLong()} } 
+unicodes('Hello') 
+```
+
 ### Q.10<br>
 Now this looks like a candidate for refactoring...
 ```scala
