@@ -43,7 +43,7 @@ def posNeg(aa:Array[Int]) = aa.filter(_ > 0) ++ aa.filter(_ <= 0)
 ```
 In Groovy:
 ```groovy
-def posNeg = { a -> a.grep { it >= 0 } + a.grep { it < 0 } }
+def posNeg = { a -> a.grep { it > 0 } + a.grep { it <= 0 } }
 ```
 <br>
 
