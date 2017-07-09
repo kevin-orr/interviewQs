@@ -4,7 +4,7 @@
 def signum(number:Int) : Int = if(number >= 0) number else -number
 ```
 <br>
-In groovy it would look something like:
+In *Groovy* it might look like:
 
 ```groovy
 def signum = {number -> if(number >= 0) number else -number}
@@ -29,9 +29,9 @@ You see that the value is *( )* and the type is *Unit*.
 for(i <- 10.to(0, -1)) println(i)
 ```
 <br>
-In Groovy it might look like:
+In *Groovy* it might look like:
 
-```scala
+```groovy
 (10..0).each{println(it)}
 ```
 <br>
