@@ -5,6 +5,13 @@
 def randyArrayOfSize(n:Int) = for(i <- 0 until n; val r = Random) yield r.nextInt
  
 ```
+
+In Groovy:
+```groovy
+def randyArrayOfSize = { n -> (0..<n).collect { (new Random()).nextInt() } }
+randyArrayOfSize(10)
+```
+
 <br>
 
 ### Q.2/3<br>
