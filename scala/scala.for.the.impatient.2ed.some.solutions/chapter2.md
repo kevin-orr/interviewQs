@@ -20,7 +20,7 @@ Run the following in a worksheet:
 val empty = {}
 ```
 <br>
-You see that the value is *( )* and the type is *Unit*.
+You see that the value is ( ) and the type is Unit.
 <br>
 
 ### Q.4<br>
