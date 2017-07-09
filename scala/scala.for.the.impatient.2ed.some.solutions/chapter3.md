@@ -111,12 +111,6 @@ def positivesAndFirstNeg(a:ArrayBuffer[Int]) = {
 
 ```
 <br>
-In Groovy:
-
-```groovy
-def unique = [1,2,3,4,5].unique()
-
-```
 
 ### Q.9<br>
 
@@ -157,8 +151,10 @@ java.util.TimeZone.getAvailableIDs().grep{ it.contains("America")}
                                     .collect{it.replace("America/", "")}
 ```
 <br>
+
 ### Q.11<br>
-On my system (JDK-8u121) I get back a map, hence the call to get values etc.
+On my system (JDK-8u121) I get back a map, hence the call to get values etc.<br>
+
 ```scala
 for(valu <- flavors.getNativesForFlavors(Array(DataFlavor.imageFlavor)).values.toArray) yield valu
 
