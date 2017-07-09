@@ -55,10 +55,13 @@ def posNeg = { a -> a.grep { it > 0 } + a.grep { it <= 0 } }
 def avg(a:Array[Double]) = if(a.length != 0) a.sum/a.length else 0
 
 ```
-
+<br>
 In Groovy:
+
 ```groovy
+
 def avg = { a -> if(a.size() != 0) a.sum()/a.size() else 0}
+
 ```
 <br>
 
@@ -74,7 +77,9 @@ arrayBuffer.sorted.reverse                        //> res1: scala.collection.mut
 ```
 <br>
 In Groovy:
+
 ```groovy
+
 def sortedReversed = [1,3,2,5,6,4,7].sorted().reverse()
 
 ```
@@ -127,6 +132,7 @@ def positivesAndFirstNeg(a:ArrayBuffer[Int]) = {
 In Groovy:
 
 ```groovy
+
 def positivesAndFirstNeg = { s->
     def removeThese = s.indices.grep { s[it] < 0}.drop(1).reverse()
     s.indices.grep {!(it in removeThese) }.collect {s[it]}
@@ -144,7 +150,8 @@ java.util.TimeZone.getAvailableIDs
 		  .sorted
 ```
 <br>
-In Groovy:
+In Groovy:<br>
+
 ```groovy
 java.util.TimeZone.getAvailableIDs().grep{ it.contains("America")}
                                     .collect{it.replace("America/", "")}
