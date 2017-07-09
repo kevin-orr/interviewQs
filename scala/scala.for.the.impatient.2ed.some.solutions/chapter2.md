@@ -75,7 +75,7 @@ def unicodes(s: String): Long = {
 
 In Groovy:
 ```groovy
-def unicodes = {s -> s.inject(1){acc, val -> acc * ((int)val).toLong()} } 
+def unicodes = {s -> s.inject(1){acc, val -> acc * ((long)val)} } 
 unicodes('Hello') 
 ```
 
