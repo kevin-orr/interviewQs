@@ -7,6 +7,14 @@ for((k,v) <- nonDiscountedPrices) discountedPrices(k) = v - v * 0.1
 
 ```
 <br>
+In Groovy:
+
+```groovy
+def nonDiscountedPrices = ["iphone": 500.50, "imac": 2040.99, "apple": 0.50]
+nonDiscountedPrices.collectEntries{ k, v -> ["$k" :v - v*0.1]}
+//  [iphone:450.450, imac:1836.891, apple:0.450]
+```
+<br>
 
 ### Q.2<br>
 I'm going to suck in the text from *Project Gutenberg’s Alice’s Adventures in Wonderland, by Lewis Carroll*  
@@ -21,6 +29,17 @@ map.toString
 ```
 <br>
 
+In Groovy:
+```groovy
+def inn = new java.util.Scanner(new java.net.URL("http://www.gutenberg.org/files/11/11-0.txt").openStream())
+def map = [:]
+while (inn.hasNext()) {
+    def word = inn.next()
+    map[word] = map.getOrDefault(word, 0) + 1
+}
+map.toString()
+```
+<br>
 
 ### Q.3<br>
 ```scala
