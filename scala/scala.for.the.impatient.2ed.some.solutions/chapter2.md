@@ -93,6 +93,23 @@ def x2n(x:Double, n:Int) : Double = {
   }
 }      
 ```
+
+I like the way Scala has functions that are independent of a class - like C++ for example. To do this in Groovy we need to use a closure but with the def of the closure ahead of the body.
+```groovy
+def x2n // when closure below is created it needs to see x2n
+x2n = {int x, double n ->
+  if(n < 0.0) 1.0 / x2n(x, -n)
+  else {
+    if(n == 0.0) 1.0
+    else {
+      if(n % 2 == 0.0) x2n(x, n/2) * x2n(x, n/2)
+      else x * x2n(x, n - 1)
+    }
+  }
+}
+x2n(2, 16)
+```
+
 <br>
 
 ### Q.11<br>
