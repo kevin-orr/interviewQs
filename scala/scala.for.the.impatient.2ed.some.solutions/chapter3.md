@@ -24,6 +24,14 @@ def swappy(a:Array[Int]) : Seq[Int]= {
 } 
 
 ```
+In Groovy:
+```groovy
+def swappy
+swappy = { a ->
+    if(a.size() % 2 == 0) (0..< a.size()).collect { index -> a[index % 2 == 0 ? index + 1 :index - 1]}
+    else swappy(a.init()) + a.last()
+}
+```
 <br>
 
 ### Q.4<br>
