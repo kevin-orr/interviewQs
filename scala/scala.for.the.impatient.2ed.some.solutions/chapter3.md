@@ -55,8 +55,12 @@ def posNeg = { a -> a.grep { it > 0 } + a.grep { it <= 0 } }
 def avg(a:Array[Double]) = if(a.length != 0) a.sum/a.length else 0
 
 ```
-<br>
 
+In Groovy:
+```groovy
+def avg = { a -> if(a.size() != 0) a.sum()/a.size() else 0}
+```
+<br>
 
 ### Q.6<br>
 
@@ -69,16 +73,27 @@ arrayBuffer.sorted.reverse                        //> res1: scala.collection.mut
 
 ```
 <br>
+In Groovy:
+```groovy
+def sortedReversed = [1,3,2,5,6,4,7].sorted().reverse()
+
+```
+<br>
 
 ### Q.7<br>
 
 ```scala
 
-Array(1,2,1, 4, 4, 3,4,5).distinct
+Array(1,2,1,4,4,3,4,5).distinct
 
 ```
 <br>
+In Groovy:
 
+```groovy
+def unique = [1,2,1, 4, 4, 3,4,5].unique()
+
+```
 
 ### Q.8<br>
 
@@ -91,22 +106,30 @@ def positivesAndFirstNeg(a:ArrayBuffer[Int]) = {
 
 ```
 <br>
+In Groovy:
+
+```groovy
+def unique = [1,2,3,4,5].unique()
+
+```
 
 ### Q.9<br>
 
 ```scala
 def positivesAndFirstNeg(a:ArrayBuffer[Int]) = {
-  val ignore = (for(i <- a.indices if(a(i)) < 0) yield i).drop(1).reverse
-  for(i <- a.indices if(!ignore.contains(i))) yield a(i)
+  val removeThese = (for(i <- a.indices if(a(i)) < 0) yield i).drop(1).reverse
+  for(i <- a.indices if(!removeThese.contains(i))) yield a(i)
 } 
 
 ```
 <br>or, from my [Scala interview type questions](../README.md)<br>
 
-```scala
-def positivesAndFirstNeg(array: Array[Int]) : Array[Int] = {
-  val (up2AndIncludingFirstNegative, afterFirstNegative) = array.splitAt(array.indexWhere(_ < 0) + 1)
-  up2AndIncludingFirstNegative ++ (for(i <- afterFirstNegative if(i >= 0)) yield i)
+In Groovy:
+
+```groovy
+def positivesAndFirstNeg = { s->
+    def removeThese = s.indices.grep { s[it] < 0}.drop(1).reverse()
+    s.indices.grep {!(it in removeThese) }.collect {s[it]}
 }
 
 ```
@@ -121,7 +144,12 @@ java.util.TimeZone.getAvailableIDs
 		  .sorted
 ```
 <br>
-
+In Groovy:
+```groovy
+java.util.TimeZone.getAvailableIDs().grep{ it.contains("America")}
+                                    .collect{it.replace("America/", "")}
+```
+<br>
 ### Q.11<br>
 On my system (JDK-8u121) I get back a map, hence the call to get values etc.
 ```scala
@@ -129,3 +157,4 @@ for(valu <- flavors.getNativesForFlavors(Array(DataFlavor.imageFlavor)).values.t
 
 ```
 <br>
+
