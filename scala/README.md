@@ -91,3 +91,33 @@ def func(array: Array[Int]): Array[Int] = {
 ```
 
 <br>
+
+### Q. *What's the value printed out?*<br>
+
+```scala
+def loop: Int = loop
+val x = loop
+println(s"${new java.util.Date()}")
+println(s"$x")
+
+```
+<br>
+The *println* expression is never reached!<br>Using *val* will cause an infinite loop as the compiler tries to evaluate the expression. <br>How about this then?<br>
+
+```scala
+def loop: Int = loop
+def x = loop
+println(s"${new java.util.Date()}")
+println(s"$x")
+```
+
+<br>
+This time we do see something printed out - the current date and time - but again we enter an infinite loop when the compiler tries to evaluate the expression <br> 
+
+```scala
+
+println(s"$x")
+
+```
+<br>
+
