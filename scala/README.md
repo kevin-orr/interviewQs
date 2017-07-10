@@ -93,7 +93,7 @@ def func(array: Array[Int]): Array[Int] = {
 
 <br>
 
-### Q. *What's the difference between the call-by-name and call-by-value strategies used in evaluating functiona parameter expressions?*<br>
+### Q. *What's the difference between the call-by-name and call-by-value strategies as used in evaluating function parameter expressions?*<br>
 Both strategies reduce to the same final values as long as:
 * the reduced expression consists of pure functions, and
 * both evaluations terminate.<br>
