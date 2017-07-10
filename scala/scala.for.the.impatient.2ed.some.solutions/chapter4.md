@@ -99,6 +99,14 @@ for((day,value) <- linky) println(day)
 def minmax(values: Array[Int]) = (values.min, values.max)            
 
 ```
+In Groovy, for some reason, tuples aren't first class citizens like in Scala or Python!
+```groovy
+def v = [0, -1, 2, 66, 3]
+def minmax = {a -> new Tuple2(a.min(), a.max())}
+minmax(v).first
+minmax(v).second
+```
+
 <br>
 
 <br>
@@ -109,10 +117,29 @@ def lteqgt(values: Array[Int], v: Int) = (values.filter(_ < v).size, values.filt
 
 ```
 <br>
+In groovy:
+
+```groovy
+def v = [0, -1, 2, -20, 12, 66, 0, 3]
+def minmax = {a -> [ltzero:a.grep{it < 0}, zero:a.grep{it == 0}, gtzero:a.grep{it > 0}]}
+minmax(v).ltzero // =  [-1, -20]
+```
+<br>
 
 ### Q.10<br>
 Use zip to create a Map where the first array represent *keys* and the second the *values* to be associated with those keys:
 ```scala
 "Hello".zip("World").toMap 
 ```
+<br>
+In groovy, again not as natural as say Scala or Haskell:
+
+```groovy
+def zip = { l, r -> (0..<l.size()).collect { new Tuple2(l[it], r[it])}}
+zip("Hello", "world")
+//or use the 'transpose()' method on list:
+["hello".toList(), "world".toList()].transpose() 
+
+```
+
 <br>

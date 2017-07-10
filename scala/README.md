@@ -49,8 +49,9 @@ sum(1 to 3 :_*)      // and this also gives 6 as expected
 
 ### Q. *The Scala compiler maps an Array[Int] to what?*
 Because everything in Scala is an object, your first guess might be that it gets maps to Integer[] on the VM but in fact the Scala compiler does some optimisation to make sure it gets mapped to int[]!
+<br>
 
-### Q. *How would you compare 2 Arrays?*
+### Q. *How would you compare 2 Arrays?*<br>
 ```scala
 val first = Array(1,2,3)
 val second = Array(1,2,3)
@@ -91,3 +92,42 @@ def func(array: Array[Int]): Array[Int] = {
 ```
 
 <br>
+
+### Q. *What's the difference between the call-by-name and call-by-value strategies as used in evaluating function parameter expressions?*<br>
+Both strategies reduce to the same final values as long as:
+* the reduced expression consists of pure functions, and
+* both evaluations terminate.<br>
+Call-by-value evaluates every function argument only once, whereas, with call-by-name, a function argument is not evaluated if the corresponding parameter is unused in the evaluation of the function body.
+<br>
+
+### Q. *What's the value printed out?*<br>
+
+```scala
+def loop: Int = loop
+val x = loop
+println(s"${new java.util.Date()}")
+println(s"$x")
+
+```
+<br>
+The *println* expression is never reached!<br>Using *val* will cause an infinite loop as the compiler tries to evaluate the expression. <br>How about this then?<br>
+
+```scala
+def loop: Int = loop
+def x = loop
+println(s"${new java.util.Date()}")
+println(s"$x")
+```
+
+<br>
+This time we do see something printed out - the current date and time - but again we enter an infinite loop when the compiler tries to evaluate the expression <br> 
+
+```scala
+
+println(s"$x")
+
+```
+<br>
+
+
+
