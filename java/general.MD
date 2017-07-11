@@ -80,6 +80,12 @@ public class final abstract SomeUser {
 <br>
 The Java Language [Spec](http://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.1.1.2) states that a class can be declared final if its definition is complete and no subclasses are desired or required. However, marking a class as abstract implies that the class is incomplete and will results in a compile-time error. 
 
+<br>
+
+### Q. Why is it a compile-time error for a generic class to be a direct or indirect subclass of Throwable?
+This restriction is needed since the *catch mechanism* of the JVM works only with non-generic classes.
+
+<br>
 
 
 
