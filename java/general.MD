@@ -67,5 +67,19 @@ public class SomeUser implements Serializable {
 ```
 <br>
 
+### Q. What's wrong with this?<br>
+
+```java
+public class final abstract SomeUser {
+  ...
+  blah blah blah
+  ...
+}
+```
+<br>
+The [Java Language Spec](https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.1.1.2) states that a class can be declared final if its definition is complete and no subclasses are desired or required. However, marking a class as abstract implies that the class is incomplete and will results in a compile-time error. 
+
+
+
 
 
