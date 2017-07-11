@@ -11,5 +11,61 @@ public class SomeUser implements Serializable {
   ...
 }
 ```
+<br>
+
+### Q. Give 3 ways to initialise a *non-static, final* instance field, x.<br>
+Inside the class body:<br>
+
+```java
+public class SomeUser {
+  final int x = 11;  
+}
+```
+<br>
+Inside a constructor:<br>
+
+```java
+public class SomeUser {
+  final int x;  
+  public SomeUser() {
+    x = 11;
+  }
+}
+```
+<br>
+Inside one instance initializer:<br>
+
+```java
+public class SomeUser implements Serializable {
+  final int x;
+  {
+    x = 11;
+  }
+}
+```
+<br>
+
+### Q. Give 2 ways to initialise a *static, final* instance field, x.<br>
+Inside the class body:<br>
+
+```java
+public class SomeUser {
+  static final int x = 11;  
+}
+```
+<br>
+Inside one static initializer:<br>
+
+```java
+public class SomeUser implements Serializable {
+  static final int x;
+  
+  static {
+    x = 11;
+  }
+}
+```
+<br>
+
 
 
