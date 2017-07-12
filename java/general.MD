@@ -1,7 +1,10 @@
 # Questions that don't really fit into the main categories
 
+### Q. True or False. All classes have at least one constructor?<br>
+True! If you do not explicitly declare a constructor in your class then the compiler will *automagically* generate a no-argument constructor, it's called the default constructor.<br>Be warned though, if you declare any constructor, with no-args or args, then the compiler will not autogenerate a default constructor.
+
 ### Q. How are primitive and reference types passed as method parameters?<br>
-They are both passed by value. In particular for references, this means that when the method returns, the passed-in reference still references the same object as before. However, the reference's state can be changed inside the method and the affect can be seen after the method call - assuming the reference has mutator methods etc. (or perhaps because of unforeseen side-effects :-)<br>
+They are both passed by *value*. In particular for references, this means that when the method returns, the passed-in reference still references the same object as before. However, the reference's state can be changed inside the method and the affect can be seen after the method call - assuming the reference has mutator methods etc. (or perhaps because of unforeseen side-effects :-)<br>
 
 
 ### Q. What's the *implicit* parameter in a non-static method?<br>
