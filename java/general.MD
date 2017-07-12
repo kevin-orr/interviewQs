@@ -28,7 +28,7 @@ public class SomeUser implements Serializable {
 <br><br>
 
 ### Q. Give 3 ways to initialise a *non-static, final* instance field, x. (a PCQ)<br>
-Inside the class body:<br>
+Inside the class declaration like:<br>
 
 ```java
 public class SomeUser {
@@ -36,7 +36,7 @@ public class SomeUser {
 }
 ```
 <br>
-Inside a constructor:<br>
+Inside a constructor as in:<br>
 
 ```java
 public class SomeUser {
@@ -47,19 +47,32 @@ public class SomeUser {
 }
 ```
 <br>
-Inside one instance initializer:<br>
+Inside one instance initializer like:<br>
 
 ```java
-public class SomeUser implements Serializable {
+public class SomeUser {
   final int x;
   {
     x = 11;
   }
 }
 ```
-<br><br>
+<br>
+There's actually a fourth way, well kinda. You could create a final method that initialises the field like this:<br>
 
-### Q. Give 2 ways to initialise a *static, final* instance field, x. (a PCQ)<br>
+```java
+public class SomeUser {
+  final int x = initializeX();
+  
+  protected final int initializeX() {
+    x = 11;
+  }
+}
+```
+
+<br>But this is still kinda doing the init inside the class declaration.<br><br>
+
+### Q. Give 2 ways to initialise a *static, final* class field, x. (a PCQ)<br>
 Inside the class body:<br>
 
 ```java
