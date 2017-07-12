@@ -1,5 +1,9 @@
 # Questions that don't really fit into the main categories
 
+### Q. How are primitive and reference types passed as method parameters?<br>
+They are both passed by value. In particular for references, this means that when the method returns, the passed-in reference still references the same object as before. However, the reference's state can be changed inside the method and the affect can be seen after the method call - assuming the reference has mutator methods etc. (or perhaps because of unforeseen side-effects :-)<br>
+
+
 ### Q. What's the *implicit* parameter in a non-static method?<br>
 *this* - the reference to the object the method was called on.<br>
 
