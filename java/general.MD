@@ -1,6 +1,6 @@
 # Questions that don't really fit into the main categories
 
-### Q. Can you explain the *transient* keyword and when you might make sure of it?<br>
+### Q. Can you explain the *transient* keyword and when you might make sure of it?(a PCQ)<br>
 According to the [Java Language Spec. as of writing Java-8](http://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.3.1.3), variables may be marked transient to indicate that they are not part of the persistent state of an object.<br>But what's that mean?<br>Well, suppose you've some serializable object with say a password field. You don't really want that field to be serialized when writing the object to a stream - say a file. If you mark the password field as transient then when the object is deserialized, that password field will be null.<br>
 ```java
 public class SomeUser implements Serializable {
@@ -13,7 +13,7 @@ public class SomeUser implements Serializable {
 ```
 <br>
 
-### Q. Give 3 ways to initialise a *non-static, final* instance field, x.<br>
+### Q. Give 3 ways to initialise a *non-static, final* instance field, x. (a PCQ)<br>
 Inside the class body:<br>
 
 ```java
@@ -45,7 +45,7 @@ public class SomeUser implements Serializable {
 ```
 <br>
 
-### Q. Give 2 ways to initialise a *static, final* instance field, x.<br>
+### Q. Give 2 ways to initialise a *static, final* instance field, x. (a PCQ)<br>
 Inside the class body:<br>
 
 ```java
@@ -67,7 +67,19 @@ public class SomeUser implements Serializable {
 ```
 <br>
 
-### Q. What's wrong with this class definition?<br>
+### Q. A *final* variable can't be reassigned once initialised right? However, there is one exception to this rule? (a PCQ)
+<br>
+
+```java
+System.in
+System.out
+System.err
+```
+<br>
+System uses the *setOut()* method which is a native method, not implemented in the Java programming language. These native methods can bypass the normal access control mechanisms.
+<br>
+
+### Q. What's wrong with this class definition? (a PCQ)<br>
 
 ```java
 public class final abstract SomeUser {
@@ -82,7 +94,7 @@ The Java Language [Spec](http://docs.oracle.com/javase/specs/jls/se8/html/jls-8.
 
 <br>
 
-### Q. Why is it a compile-time error for a generic class to be a direct or indirect subclass of Throwable?
+### Q. Why is it a compile-time error for a generic class to be a direct or indirect subclass of Throwable? (a PCQ)
 This restriction is needed since the *catch mechanism* of the JVM works only with non-generic classes.
 
 <br>
