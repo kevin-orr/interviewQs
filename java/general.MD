@@ -1,7 +1,13 @@
 # Questions that don't really fit into the main categories
 
 ### Q. True or False. All classes have at least one constructor?<br>
-True! If you do not explicitly declare a constructor in your class then the compiler will *automagically* generate a no-argument constructor, it's called the default constructor.<br>Be warned though, if you declare any constructor, with no-args or args, then the compiler will not autogenerate a default constructor.<br>
+True! If you do not explicitly declare a constructor in your class then the compiler will *automagically* generate a no-argument constructor, it's called the default constructor.<br>Be warned though, if you declare any constructor, with no-args or args, then the compiler will not autogenerate a default constructor.
+<br><br>
+
+### Q. What is an inner class?<br>
+An inner class is a non-static nested class.<br> Take a look at [Java Tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html) where it states that "Nested classes are divided into two categories: static and non-static. Nested classes that are declared static are called static nested classes. Non-static nested classes are called inner classes."
+<br><br>
+
 
 ### Q. What happens when you return a value from a method that is declared void?<br>
 You'll get a compiler error as you would if you not return a value from a method expecting a return type, albeit a different error message.<br><br>
@@ -14,7 +20,7 @@ They are both passed by *value*. In particular for references, this means that w
 ### Q. What's the *implicit* parameter in a non-static method?<br>
 *this* - the reference to the object the method was called on.<br><br>
 
-### Q. Can you explain the *transient* keyword and when you might make sure of it?(a PCQ)<br>
+### Q. Can you explain the *transient* keyword and when you might make use of it?(a PCQ)<br>
 According to the [Java Language Spec. as of writing Java-8](http://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.3.1.3), variables may be marked transient to indicate that they are not part of the persistent state of an object.<br>But what's that mean?<br>Well, suppose you've some serializable object with say a password field. You don't really want that field to be serialized when writing the object to a stream - say a file. If you mark the password field as transient then when the object is deserialized, that password field will be null.<br>
 ```java
 public class SomeUser implements Serializable {
