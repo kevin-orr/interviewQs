@@ -8,6 +8,25 @@ True! If you do not explicitly declare a constructor in your class then the comp
 An inner class is a non-static nested class.<br> Take a look at [Java Tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html) where it states that "Nested classes are divided into two categories: static and non-static. Nested classes that are declared static are called static nested classes. Non-static nested classes are called inner classes."
 <br><br>
 
+### Q. What's the syntax for creating an object for the static nested class *StaticNestedClass* that's nested inside *OuterClass*?<br>
+
+```java
+
+OuterClass.StaticNestedClass nestedObject = new OuterClass.StaticNestedClass();
+     
+```
+<br><br>
+
+### Q. What's the syntax for creating an object for the inner class *InnerClass* that's nested inside *OuterClass*?<br>
+This is a bit more clunky. Remember, to instantiate the inner class you need an instance of the *OuterClass* first.<br>
+
+```java
+OuterClass outerObject = instantiateOuterClassSomehowFromSomeWhere();
+...
+OuterClass.InnerClass innerObject = outerObject.new InnerClass();
+     
+```
+<br><br>
 
 ### Q. What happens when you return a value from a method that is declared void?<br>
 You'll get a compiler error as you would if you not return a value from a method expecting a return type, albeit a different error message.<br><br>
