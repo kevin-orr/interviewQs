@@ -1,6 +1,6 @@
 # Some questions on Spring
 
-### Q. *Why don't we see any caching occurring?*(pcq)<br>
+### Q. *Why don't we see any caching occurring?* (a PCQ)<br>
 Image you've got some service with one method calling another that is annotated with <br>@Cacheable (org.springframework.cache.annotation.Cacheable) - similar to below.<br>Assumptions: your system is setup correctly for caching with Spring.<br>The *getMapByIds* method is an expensive operation which should cache the response (based on the id's) but for some reason it doesn't seem to be doing any caching. The entire operation is taking the same amount of time regardless of the caching annotation!<br>Why can't we get caching to work in this scenario?<br>
 ```java
 @Service
@@ -54,7 +54,7 @@ The first option might be the best because the second option requires exposing t
 }
 ```
 
-### Q. *Does a Controller's handlers necessarily have to be public?*(pcq)<br>
+### Q. *Does a Controller's handlers necessarily have to be public?* (a PCQ)<br>
 Suppose we have the following controller with all mapped handlers having private access level.<br>
 Will this controller still work?
 ```java
