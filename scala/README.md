@@ -20,6 +20,30 @@ def func(name: String) : Unit = {
 <br>
 
 
+### Q. *What does this function return?*
+
+```scala
+def ???(x:Int) {
+  val x = 10
+  x * x
+}
+???(2)  // what's the value returned from this function
+
+```
+<br>
+The function above is actually a procedure - it doesn't return anything.<br>Had we placed an equal sign *=* just before first curly bracket then it would have returned 100 - as in: 
+
+```scala
+def ???(x:Int) = {
+  val x = 10
+  x * x
+}
+???(2)  // this now returns 100!
+
+```
+<br>
+
+
 ### Q. *How might we pass a List[Int] or Vector[Int] to a function that expects variable args? (pcq)*
 For example, suppose we have the function **sum** below. When we try to pass a List[Int] as the argument we get a compiler error.
 ```scala
