@@ -1,5 +1,5 @@
 # Some Scala Q's<br>
-<br>
+
 I'm also working through the problems from the excellent book 
 [Scala for the Impatient](scala.for.the.impatient.2ed.some.solutions/README.md) so please feel free to take and look and comment.
 <br>
