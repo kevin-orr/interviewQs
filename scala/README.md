@@ -43,7 +43,6 @@ def ???(x:Int) = {
 ```
 <br>
 
-
 ### Q. *How might we pass a List[Int] or Vector[Int] to a function that expects variable args? (pcq)*
 For example, suppose we have the function **sum** below. When we try to pass a List[Int] as the argument we get a compiler error.
 ```scala
@@ -85,7 +84,6 @@ same = first.deep == second.deep
 ```
 <br>
 
-
 ### Q. *Given an array of integers, write a function that returns a new array with same order as original but with all negative numbers removed except for the very first negative number in the collection. What if the order of the elements isn't important?* (pcq)<br>
 I've lifted this question from Cay S. Horstmann's excellent book [**Scala for the Impatient**](https://www.google.nl/webhp?sourceid=chrome-instant&rlz=1C1XYJR_en__726__727&ion=1&espv=2&ie=UTF-8#q=amazon+Cay+S.+horstmann+) and is deffo well worth a read - especially for his solutions to the problem.
 ```scala
@@ -114,7 +112,6 @@ def func(array: Array[Int]): Array[Int] = {
   positives ++ negatives.take(1)
 }
 ```
-
 <br>
 
 ### Q. *What's the difference between the call-by-name and call-by-value strategies as used in evaluating function parameter expressions?*<br>
@@ -152,6 +149,11 @@ println(s"$x")
 
 ```
 <br>
+
+### Q. *When must you explicitly declare the return type for a function?*
+Most of the time the compiler will infer the result type but for *recursive* functions you must explicitly declare the return type.
+<br>
+
 
 
 
