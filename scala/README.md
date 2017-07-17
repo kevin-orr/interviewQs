@@ -6,7 +6,14 @@ I'm also working through the problems from the excellent book
 <br>
 
 ### Q. What's the difference between call-by-value and call-by-name?<br>
-[Cf. Scala Docs](http://docs.scala-lang.org/glossary/#by-name-parameter) - when a function/method argument is passed by value, the argument expression will first be evaluted before then being passed into the function/method. Whereas, when an argument expression is passed by name, the parameter is passed into the function/method and evaluated each time the parameter is referenced by name inside the function/method.<br>You can tell that pass-by-name symantics are used when a parameter is marked with a *rocket*, i.e., *=>*, in front of the parameter type, e.g., (x: => Int).<br>
+Both strategies reduce to the same final values as long as:
+
+* the reduced expression consists of pure functions (no side effects), and
+* both evaluations terminate.<br>
+
+Call-by-value evaluates every function argument only once, whereas, with call-by-name, a function argument is not evaluated if the corresponding parameter is unused in the evaluation of the function body.
+<br>
+[Cf. Scala Docs](http://docs.scala-lang.org/glossary/#by-name-parameter) - when a function/method argument is passed by value, the argument expression will first be evaluted before then being passed into the function/method - argument is evaluated only once. <br>Whereas, when an argument expression is passed by name, the parameter is passed into the function/method and evaluated each time the parameter is referenced by name inside the function/method. It's not evaluated if the arugment is not used.<br>You can tell that pass-by-name symantics are used when a parameter is marked with a *rocket*, i.e., *=>*, in front of the parameter type, e.g., (x: => Int).<br>
 
 
 ### Q. How can I create an array/list containing 10 random values?<br>
@@ -100,9 +107,11 @@ sum(1 to 3 :_*)      // and this also gives 6 as expected
 
 <br>
 
+
 ### Q. The Scala compiler maps an Array[Int] to what?<br>
 Because everything in Scala is an object, your first guess might be that it gets maps to Integer[] on the VM but in fact the Scala compiler does some optimisation to make sure it gets mapped to int[]!
 <br>
+
 
 ### Q. How would you compare 2 Arrays?<br>
 
@@ -153,12 +162,6 @@ def func(array: Array[Int]): Array[Int] = {
 
 <br>
 
-### Q. What's the difference between the call-by-name and call-by-value strategies as used in evaluating function parameter expressions?<br>
-Both strategies reduce to the same final values as long as:
-* the reduced expression consists of pure functions, and
-* both evaluations terminate.<br>
-Call-by-value evaluates every function argument only once, whereas, with call-by-name, a function argument is not evaluated if the corresponding parameter is unused in the evaluation of the function body.
-<br>
 
 ### Q. What's the value printed out?<br>
 
@@ -193,6 +196,7 @@ Most of the time the compiler will infer the result type but for *recursive* fun
 <br>
 or
 <br>
+
 ### Q. Why does this not compile?<br>
 
 ```scala
