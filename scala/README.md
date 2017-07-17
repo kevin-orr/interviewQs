@@ -18,6 +18,10 @@ Array.fill(10)(math.random)
 new Array[Number](10).map(x => math.random) 
 // or
 Array.tabulate(10)( x => math.random))
+// or
+for(i <- (0 until 10)) yield math.random()   
+// or
+(0 until 10 ).toArray.map(x => math.random)
 ```
 <br>
 
