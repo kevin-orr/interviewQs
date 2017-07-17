@@ -6,7 +6,20 @@ I'm also working through the problems from the excellent book
 <br>
 
 ### Q. What's the difference between call-by-value and call-by-name?<br>
-[Cf. Scala Docs](http://docs.scala-lang.org/glossary/#by-name-parameter) - when a function/method argument is passed by value, the argument expression will first be evaluted before then being passed into the function/method. Whereas, when an argument expression is passed by name, the parameter is passed into the function/method and evaluated each time the parameter is referenced by name inside the function/method.<br>You can tell that pass-by-name symantics are used when a parameter is marked with a *rocket*, i.e., *=>*, in front of the parameter type, e.g., (x: => Int). .
+[Cf. Scala Docs](http://docs.scala-lang.org/glossary/#by-name-parameter) - when a function/method argument is passed by value, the argument expression will first be evaluted before then being passed into the function/method. Whereas, when an argument expression is passed by name, the parameter is passed into the function/method and evaluated each time the parameter is referenced by name inside the function/method.<br>You can tell that pass-by-name symantics are used when a parameter is marked with a *rocket*, i.e., *=>*, in front of the parameter type, e.g., (x: => Int).<br>
+
+
+### Q. How can I create an array/list containing 10 random values?<br>
+Worth noting that second argument to *fill* is using pass by name symantics. <br>
+
+```scala
+Array.fill(10)(math.random) 
+// or
+new Array[Number](10).map(x => math.random) 
+// or
+Array.tabulate(10)( x => math.random))
+```
+<br>
 
 
 ### Q. What's a procedure in Scala?<br>
