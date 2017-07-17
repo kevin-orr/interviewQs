@@ -5,6 +5,10 @@ I'm also working through the problems from the excellent book
 <br>
 <br>
 
+### Q. What's the difference between call-by-value and call-by-name?<br>
+[Cf. Scala Docs](http://docs.scala-lang.org/glossary/#by-name-parameter) - when a function/method argument is passed by value, the argument expression will first be evaluted before then being passed into the function/method. Whereas, when an argument expression is passed by name, the parameter is passed into the function/method and evaluated each time the parameter is referenced by name inside the function/method.<br>You can tell that pass-by-name symantics are used when a parameter is marked with a *rocket*, i.e., *=>*, in front of the parameter type, e.g., (x: => Int). .
+
+
 ### Q. What's a procedure in Scala?<br>
 A procedure is a function that doesn't return a value and is really only used for its side effect.
 You can either explicitly include the Unit return type or leave it out along with the =, for example:<br>
