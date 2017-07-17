@@ -29,6 +29,10 @@ Array.tabulate(10)( x => math.random))
 for(i <- (0 until 10)) yield math.random   
 // or
 (0 until 10 ).toArray.map(x => math.random)
+// or
+s"1-".*(10).split('-').map(x => math.random)
+// or
+math.random.toString().replace("0.","").take(10).toArray
 ```
 <br>
 
