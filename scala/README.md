@@ -13,7 +13,7 @@ Both strategies reduce to the same final values as long as:
 
 Call-by-value evaluates every function argument only once, whereas, with call-by-name, a function argument is not evaluated if the corresponding parameter is unused in the evaluation of the function body.
 <br>
-[Cf. Scala Docs](http://docs.scala-lang.org/glossary/#by-name-parameter) - when a function/method argument is passed by value, the argument expression will first be evaluted before then being passed into the function/method - argument is evaluated only once. <br>Whereas, when an argument expression is passed by name, the parameter is passed into the function/method and evaluated each time the parameter is referenced by name inside the function/method. It's not evaluated if the arugment is not used.<br>You can tell that pass-by-name symantics are used when a parameter is marked with a *rocket*, i.e., *=>*, in front of the parameter type, e.g., (x: => Int).<br>
+Cf. [Scala Docs](http://docs.scala-lang.org/glossary/#by-name-parameter) or [Scala Tutorial](http://docs.scala-lang.org/tutorials/tour/by-name-parameters.html) - when a function/method argument is passed by value, the argument expression will first be evaluted before then being passed into the function/method - argument is evaluated only once. <br>Whereas, when an argument expression is passed by name, the parameter is passed into the function/method and evaluated each time the parameter is referenced by name inside the function/method. It's not evaluated if the arugment is not used.<br>You can tell that pass-by-name symantics are used when a parameter is marked with a *rocket*, i.e., *=>*, in front of the parameter type, e.g., (x: => Int).<br>
 
 
 ### Q. How can I create an array/list containing 10 random values?<br>
