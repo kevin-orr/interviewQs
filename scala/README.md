@@ -96,12 +96,12 @@ sum(1,2,3)          // gives 6 as expected, however,
 <br>
 You have to use the special syntax:
 
-```bash
+```java
  :_* 
 ```
 
 <br>
-to force the List or Range to be considered as a Seq[Int]<br>
+This notation tells the compiler to pass each element of args as its own argument to sum, rather than all of it as a single argument:<br>
 
 ```scala
 sum(1,2,3)           // gives 6 as expected, however,
