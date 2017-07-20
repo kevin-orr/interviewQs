@@ -5,6 +5,12 @@ I'm also working through the problems from the excellent book
 <br>
 <br>
 
+### Q. What's the difference between a trait and a class?<br>
+* A trait definition looks exactly like that of a class definition except that it uses the keyword trait
+* A trait cannot be instantiated and therefore has no constructor like classes (for now)<br>
+Traits are like Interfaces in Java 8 except traits can also hold state. So where a java dev might use and Interface + Abstract Class, a Scala dev would most likely use a trait.
+<br>
+
 ### Q. What's the difference between call-by-value and call-by-name?<br>
 Both strategies reduce to the same final values as long as:
 
@@ -65,7 +71,6 @@ def ???(x:Int) {
 }
 ???(2)  // what's the value returned from this function
 ```
-
 <br>
 The function above is actually a procedure - it doesn't return anything.<br>Had we placed an equal sign *=* just before first curly bracket then it would have returned 100 - as in: 
 <br>
@@ -77,11 +82,10 @@ def ???(x:Int) = {
 }
 ???(2)  // this now returns 100!
 ```
-
 <br>
 
 ### Q. How might we pass a List[Int] or Vector[Int] to a function that expects variable args? (pcq)<br>
-For example, suppose we have the function **sum** below. When we try to pass a List[Int] as the argument we get a compiler error.
+For example, suppose we have the function **sum** below. When we try to pass a List[Int] as the argument we get a compiler error.<br>
 
 ```scala
 def sum(args: Int*) = {
@@ -110,7 +114,6 @@ sum(1 to 3 :_*)      // and this also gives 6 as expected
 ```
 
 <br>
-
 
 ### Q. The Scala compiler maps an Array[Int] to what?<br>
 Because everything in Scala is an object, your first guess might be that it gets maps to Integer[] on the VM but in fact the Scala compiler does some optimisation to make sure it gets mapped to int[]!
@@ -163,9 +166,7 @@ def func(array: Array[Int]): Array[Int] = {
   positives ++ negatives.take(1)
 }
 ```
-
 <br>
-
 
 ### Q. What's the value printed out?<br>
 
