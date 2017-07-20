@@ -1,5 +1,8 @@
 # Questions that don't really fit into the main categories
 
+### Q. Can you explain the paradigm "convention over configuration" and give a few examples were you may have used it?<br>
+<br><br>
+
 ### Q. True or False. All classes have at least one constructor?<br>
 True! If you do not explicitly declare a constructor in your class then the compiler will *automagically* generate a no-argument constructor, it's called the default constructor.<br>Be warned though, if you declare any constructor, with no-args or args, then the compiler will not autogenerate a default constructor.
 <br><br>
