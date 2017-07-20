@@ -7,6 +7,7 @@ I'm also working through the problems from the excellent book
 
 ### Q. What's the difference between a trait and a class?<br>
 * A trait definition looks exactly like that of a class definition except that it uses the keyword trait.
+* A trait can contain fields and concrete methods.
 * A trait cannot have any "class" parameters (i.e., parameters passed to the primary constructor of a class - for now).<br>
 * In classes, *super* calls are statically bound, in traits, they are dynamically bound.  
 Traits are like Interfaces in Java 8 except traits can also hold state. So were a java dev might use and Interface + Abstract Class, a Scala dev would most likely use a trait.
