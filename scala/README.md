@@ -5,6 +5,41 @@ I'm also working through the problems from the excellent book
 <br>
 <br>
 
+### Q. How does Scala's private and protected access modifiers differ from java's?<br>
+As Martin O. states in his excellent, if not very long, book - private members in Scala are treated similarly to Java. A member tagged private is visible only inside the class or object that contains the member definition. However, in Scala, this rule also applies for inner classes.
+
+```scala
+class Outer {
+  class Inner {
+    private def f() = { println("f") }
+    class InnerMost {
+      f() // OK
+    }
+  }
+  (new Inner).f() // error: f is not accessible
+}
+```
+<br>
+In Scala, (new Inner).f() is illegal because f is declared private in Inner and the access is not from within class Inner. By contrast, the first access to f in class InnerMost is OK, because that access is contained in the body of class Inner. <br>Note that Java would permit both accesses because it lets an outer class access private members of its inner classes
+<br>
+In Scala, a protected member is only accessible from subclasses of the class in which the member is defined. In Java such accesses are also possible from other classes in the same package.<br>
+
+```scala
+package p {
+      class Super {
+        protected def f() = { println("f") }
+      }
+      class Sub extends Super {
+        f()
+      }
+      class Other {
+        (new Super).f()  // error: f is not accessible
+      }
+    }
+```
+<br>
+Access to f in class Sub is OK because f is declared protected in Super and Sub is a subclass of Super. However, the access to f in Other is not permitted, because Other does not inherit from Super. <br>Again, in Java, the previous access would still be permitted because Other is in the same package as Sub.<br>
+
 ### Q. What's the difference between a trait and a class?<br>
 * A trait definition looks exactly like that of a class definition except that it uses the keyword trait.
 * A trait can contain fields and concrete methods.
