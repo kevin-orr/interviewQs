@@ -5,6 +5,27 @@ I'm also working through the problems from the excellent book
 <br>
 <br>
 
+### Q. Which 3 imports are implicitly injected in to every Scala program?<br>
+```scala
+import java.lang._ // everything in the java.lang package
+import scala._     // everything in the scala package
+import Predef._    // everything in the Predef object
+```
+<br>
+
+### Q. Comment on the following import statements<br>
+```scala
+import java.util.{HashMap, HashSet}
+import java.util.{HashMap => JavaHashMap, HashSet}
+import java.{util => JUtils}
+import java.util.{HashMap => _, _}
+```
+<br>
+The first only imports HashMap and hashSet from java.util.<br>
+The second imports HashMap and HashSet but this time it renames the HashMap to JavaHashMap.<br>
+The third renames the java.util as JUtils.
+The last statement imports everything in java.util except HashMap, essentially hidding it.
+
 ### Q. How does Scala's private and protected access modifiers differ from java's?<br>
 As Martin O. states in his excellent, if not very long, book - private members in Scala are treated similarly to Java. A member tagged private is visible only inside the class or object that contains the member definition. However, in Scala, this rule also applies for inner classes.
 
