@@ -23,10 +23,10 @@ import java.util.{HashMap => _, _}
 <br>
 The first only imports HashMap and hashSet from java.util.<br>
 The second imports HashMap and HashSet but this time it renames the HashMap to JavaHashMap.<br>
-The third renames the java.util as JUtils.
+The third renames the java.util as JUtils.<br>
 The last statement imports everything in java.util except HashMap, essentially hidding it.
 
-### Q. How does Scala's private and protected access modifiers differ from java's?<br>
+### Q. How does Scala's private and protected access modifiers differ from Java's?<br>
 As Martin O. states in his excellent, if not very long, book - private members in Scala are treated similarly to Java. A member tagged private is visible only inside the class or object that contains the member definition. However, in Scala, this rule also applies for inner classes.
 
 ```scala
