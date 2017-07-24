@@ -80,23 +80,35 @@ Call-by-value evaluates every function argument only once, whereas, with call-by
 Cf. [Scala Docs](http://docs.scala-lang.org/glossary/#by-name-parameter) or [Scala Tutorial](http://docs.scala-lang.org/tutorials/tour/by-name-parameters.html) - when a function/method argument is passed by value, the argument expression will first be evaluted before then being passed into the function/method - argument is evaluated only once. <br>Whereas, when an argument expression is passed by name, the parameter is passed into the function/method and evaluated each time the parameter is referenced by name inside the function/method. It's not evaluated if the arugment is not used.<br>You can tell that pass-by-name symantics are used when a parameter is marked with a *rocket*, i.e., *=>*, in front of the parameter type, e.g., (x: => Int).<br>
 
 
-### Q. How can I create an array/list containing 10 random values?<br>
+### Q. How can I create an array/list containing 10 random or different values?<br>
 Worth noting that second argument to *fill* is using pass by name symantics. <br>
 
 ```scala
-Array.fill(10)(math.random) 
+Array.fill(10)(math.random)
 // or
-new Array[Number](10).map(x => math.random) 
+new Array[Number](10).map(x => math.random)
 // or
-Array.tabulate(10)( x => math.random))
+Array.tabulate(10)( x => math.random)
 // or
-for(i <- (0 until 10)) yield math.random   
+(for(i <- (0 until 10)) yield math.random).toArray
 // or
 (0 until 10 ).toArray.map(x => math.random)
 // or
 s"1-".*(10).split('-').map(x => math.random)
 // or
 math.random.toString().replace("0.","").take(10).toArray
+// for Lists...
+List.range(1, 10).toArray
+// or
+List.fill(10)(math.random)
+// or
+List.tabulate(10)( x => math.random)
+// or
+(for(i <- (0 until 10)) yield math.random).toList
+// or
+(0 until 10 ).toList
+// or
+s"1-".*(10).split('-').toList.map(x => math.random)
 ```
 <br>
 
