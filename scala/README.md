@@ -285,7 +285,7 @@ def factorial(n:Int) = {
 Becasuse we haven't declared the return type.
 <br>
 
-### Q. Show different ways to declare a function value that returns if an Int is even or not.<br>
+### Q. Show different ways to declare a function value that returns true if an Int is even and false if not.<br>
 
 ```scala
 // the first 4 explicitly include the return type
