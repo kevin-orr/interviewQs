@@ -98,7 +98,7 @@ s"1-".*(10).split('-').map(x => math.random)
 // or
 math.random.toString().replace("0.","").take(10).toArray
 // for Lists...
-List.range(1, 10).toArray
+List.range(0, 10).toArray
 // or
 List.fill(10)(math.random)
 // or
