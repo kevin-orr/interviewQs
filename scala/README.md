@@ -285,5 +285,22 @@ def factorial(n:Int) = {
 Becasuse we haven't declared the return type.
 <br>
 
+### Q. Show different ways to declare a function value that returns if an Int is even or not.<br>
+
+```scala
+// the first 4 explicitly include the return type
+val f1: (Int) => Boolean = i => { i % 2 == 0 }
+assert(f1(3) == false)
+val f2: Int => Boolean = i => { i % 2 == 0 }
+assert(f2(3) == false)
+val f3: Int => Boolean = i => i % 2 == 0
+assert(f3(3) == false)
+val f4: Int => Boolean = _ % 2 == 0
+assert(f4(3) == false)
+
+// while this one lets the Scala compiler infer the return type
+val f5 = (i:Int) => { i % 2 == 0}
+assert(f5(3) == false)
+``
 
 
