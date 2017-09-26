@@ -66,7 +66,7 @@ Access to f in class Sub is OK because f is declared protected in Super and Sub 
 * A trait can contain fields and concrete methods.
 * A trait cannot have any "class" parameters (i.e., parameters passed to the primary constructor of a class - for now).<br>
 * In classes, *super* calls are statically bound, in traits, they are dynamically bound.  
-Traits are like Interfaces in Java 8 except traits can also hold state. So were a java dev might use and Interface + Abstract Class, a Scala dev would most likely use a trait.
+Traits are like Interfaces in Java 8 except traits can also hold state. So were a java dev might use an Interface + Abstract Class combo, a Scala dev would most likely use a trait.
 <br>
 
 ### Q. What's the difference between call-by-value and call-by-name?<br>
