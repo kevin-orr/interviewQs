@@ -285,6 +285,24 @@ def factorial(n:Int) = {
 Becasuse we haven't declared the return type.
 <br>
 
+### Q. How can I get this to compile?<br>
+
+```scala
+class User(name: String = "KOrr")
+val user = new User
+println(s"User name is: ${user.name}")
+```
+
+<br>
+As it stands, the constructor paramter <b>name</b> is neither val nor var and as such no getter/setter is generated for it. If the parameter were to be used inside a method however, it would be equivalent to a <b>private[this]</b> val field.<br>
+Change the constructor signature to say:<br>
+
+```scala
+class User(val name: String = "KOrr")
+```
+
+<br>
+
 ### Q. Show different ways to declare a function value that returns true if an Int is even and false if not.<br>
 
 ```scala
