@@ -154,6 +154,55 @@ This restriction is needed since the *catch mechanism* of the JVM works only wit
 
 <br><br>
 
+### Q. What you reckon will be printed out when this program is executed?<br>
 
+```java
+public class App {
+
+    public static void main(String[] args) {
+
+        Counter counter = new Counter();
+
+        for (int i = 0; i < 100; i++) {
+            counter.increment();
+        }
+
+        increment(counter);
+
+        System.out.print(String.format("Counter is now = %s", counter.getCount()));
+    }
+
+    public static Counter increment(Counter counter) {
+
+        counter = new Counter();
+
+        for (int i = 0; i < 100; i++) {
+            counter.decrement();
+        }
+
+        return counter;
+    }
+}
+
+class Counter {
+    private int count = 0;
+
+    public int getCount() { return count;}
+
+    public void increment() { count += 1; }
+
+    public void decrement() { count -= 1; }
+
+}
+
+```
+<br>
+Here's what's printer out:<br>
+
+```java
+Counter is now = 100
+```
+<br>
+Why? <br>Remember that Java does not have pass by reference semantics. Sure you can pass an object into a method and change the state of the object and even see the changes when the scope of the method is gone. However, you can't change the memory location that the object points to - it's stuck there. So even though the static increment() method attempts to change the location of the Counter object passed in as parameter, once the method is finish the original Counter object will still point to the old object and it's state will not have been changed.
 
 
