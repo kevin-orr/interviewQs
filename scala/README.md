@@ -319,7 +319,7 @@ assert(f4(3) == false)
 // while this one lets the Scala compiler infer the return type
 val f5 = (i:Int) => { i % 2 == 0}
 assert(f5(3) == false)
-``
+```
 
 <br>
 
@@ -328,8 +328,9 @@ assert(f5(3) == false)
 ```scala
 var (WHAT, WILL, RESULT) = (12, 10, 110)
 println(s"$WHAT-$WILL-$RESULT")
-``
+```
 
 <br>
 The only thing printed will be a compiler error! Remember that Scala treats UPPER-CASE variable names differently when it comes to pattern matching and pattern matching will be used here. Scala calls UPPER-CASE variables stable identifiers in the context of pattern matching and they are intended for matching against constants - so the compiler will assume that WHAT and WILL etc. have already defined somewhere but in fact it can't find definition for them so blows up.
+<br>
 
