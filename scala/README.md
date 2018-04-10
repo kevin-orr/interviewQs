@@ -63,7 +63,7 @@ Access to f in class Sub is OK because f is declared protected in Super and Sub 
 
 ### Q. What's the difference between a trait and a class?<br>
 * A trait definition looks exactly like that of a class definition except that it uses the keyword trait.
-* A trait can contain fields and concrete methods.
+* A trait can contain fields and concrete methods (note with Java8+ we can now have default/static concrete methods).
 * A trait cannot have any "class" parameters (i.e., parameters passed to the primary constructor of a class - for now).<br>
 * In classes, *super* calls are statically bound, in traits, they are dynamically bound.  
 Traits are like Interfaces in Java 8 except traits can also hold state. So were a java dev might use an Interface + Abstract Class combo, a Scala dev would most likely use a trait.
