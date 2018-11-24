@@ -4,4 +4,4 @@
 * [Concurrent](concurrent/README.md)
 * [General Questions](general.MD)
 * [Spring](spring/README.md)
-* [Java for the Impatient](Java.for.the.Impatient/README.md)
+* [Cay S. Horstmann's 'Java for the Impatient'](Java.for.the.Impatient/README.md)
