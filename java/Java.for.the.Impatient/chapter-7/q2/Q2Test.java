@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Kevin Orr
- * Some tests for Q1
+ * Some tests for Q2
  * Maybe should have used Spock or Kotlin for the tests...
  */
 public class Q2Test {
