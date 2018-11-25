@@ -31,7 +31,7 @@ public class Q2 {
     }
 
     public List<String> replaceAll(List<String> list) {
-        list.replaceAll(item -> item.toUpperCase());
+        list.replaceAll(String::toUpperCase);
         return list;
     }
 }
