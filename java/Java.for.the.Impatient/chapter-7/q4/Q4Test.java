@@ -7,11 +7,12 @@ import org.junit.Test;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
  * Kevin Orr
- * Some tests for Q1
+ * Some tests for Q4
  * Maybe should have used Spock or Kotlin for the tests...
  */
 public class Q4Test {
@@ -38,5 +39,13 @@ public class Q4Test {
         fail("We shouldn't have got this far - expecting an exception to be throw before now...");
     }
 
+    @Test
+    public void expectNoConcurrentModificationException() {
 
+        //given
+        //when
+        List<String> upper = q4.noException();
+        //then
+        assertTrue(true);
+    }
 }
