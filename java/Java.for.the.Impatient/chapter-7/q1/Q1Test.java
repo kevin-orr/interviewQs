@@ -32,7 +32,7 @@ public class Q1Test {
     }
 
     @Test
-    public void primesBelow10() {
+    public void primesUpTo10() {
 
         //given
         int n = 10;
@@ -45,7 +45,7 @@ public class Q1Test {
     }
 
     @Test
-    public void primesBelow3() {
+    public void expectOnly2And3WhenNIs3() {
 
         //given
         int n = 3;
@@ -57,7 +57,7 @@ public class Q1Test {
     }
 
     @Test
-    public void primesBelow30() {
+    public void primesUpTo30() {
 
         //given
         int n = 30;
