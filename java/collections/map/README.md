@@ -17,4 +17,4 @@ Type           | synchronized  | Key/Value nullable  | Insert order maintained |
 ------------   | ------------- | ------------- | ------------- | -------------    | -------------
 HashMap<K,V>   | No            | yes/yes           | no           | AbstractMap<K,V> | Map<K,V>, Cloneable, Serializable
 TreeMap<K,V>   | No            | no/yes            | yes           | AbstractMap<K,V> | NavigableMap<K,V>, Cloneable, java.io.Serializable
-Hashtable<K,V> | yes           | no/no            | yes            | Dictionary<K,V>  | Map<K,V>, Cloneable, java.io.Serializable
+Hashtable<K,V> | yes           | no/no            | no            | Dictionary<K,V>  | Map<K,V>, Cloneable, java.io.Serializable
