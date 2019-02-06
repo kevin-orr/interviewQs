@@ -66,5 +66,34 @@ public class App {
 ...
      
 ```
+
+<br>
+or, change the **printTheCount()** method to **static**, as in
+<br>
+
+```java
+
+public class App {
+
+    public static void main(String[] args) {
+        Worker worker1 = new Worker(new Counter());
+        Worker worker2 = new Worker(new Counter());
+        Worker worker3 = new Worker(new Counter());
+
+        worker1.start();
+        worker2.start();
+        worker3.start();
+    }
+}
+
+class Counter {
+    /* add static modifier */
+    public static synchronized void printTheCount() {
+        for (int i = 1; i < 1000; i++) {
+            System.out.println(i);
+        }
+    }
+}
+```
 <br>
 
