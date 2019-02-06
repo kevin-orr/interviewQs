@@ -9,6 +9,12 @@
 * WeakHashMap
 * The full list is [here](https://docs.oracle.com/javase/8/docs/api/)
 <br><br>
-### Q. *Can you explain some differences between HashMap and Hashtable?*<br>
-The **HashMap** is **unsynchronized** and also allows for **null** values and **null** key.<br>The Hashtable has also been around much longer - since JDK 1.0, whereas the HashMap is a relative new comer having been introduced in JDK 1.2<br>
+### Q. *Can you explain some differences between the various Map implementations?*<br>
+The **HashMap** is **unsynchronized** and also allows for **null** values and **null** key.<br>The Hashtable has also been around much longer - since JDK 1.0, whereas the HashMap and TreeMap are relatively new comers having been introduced in JDK 1.2<br>
 if you're looking for a thread-safe, highly-concurrent collection then you should take a look inside *java.util.concurrent* - lots of alternatives to using Hastable for example. 
+
+Type           | synchronized  | Key nullable  | Value nullable | extends         | implements
+------------   | ------------- | ------------- | ------------- | -------------    | -------------
+HashMap<K,V>   | No            | yes           | yes           | AbstractMap<K,V> | Map<K,V>, Cloneable, Serializable
+TreeMap<K,V>   | No            | no            | yes           | AbstractMap<K,V> | NavigableMap<K,V>, Cloneable, java.io.Serializable
+Hashtable<K,V> | yes           | no            | no            | Dictionary<K,V>  | Map<K,V>, Cloneable, java.io.Serializable
