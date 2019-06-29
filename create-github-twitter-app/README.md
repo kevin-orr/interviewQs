@@ -1,21 +1,19 @@
 # Create a simple command line API mashup of GitHub and Twitter APIs. 
 
-	<br>
 Search for "Reactive" projects on GitHub, then for each project search for tweets that mention it. 
 You should output a summary of each project with a short list of recent tweets, in JSON format.
 
 
 ## Instructions
-- Complete this assignment in Scala or Java.
-- We expect from you to submit a Production quality like code with all what this means to you.
+- Complete this assignment in Scala or Java or whatever language you'd like.
+- Expect Production quality like code.
 - You will require a Twitter consumer key and secret, to complete this.
-- Any private information and should not be included in your submission. However, you must make this information easily configurable via a configuration or properties file.
+- Any private information should not be included in your submission. However, you must make this information easily configurable via a configuration or properties file.
 - Twitter API is rate limited so you should only try to retrieve tweets for 10 projects.
-- The code should be submitted in a .zip or .tar archive with instructions to build and run the project. We recommend to upload it with Dropbox (or similar) to share it easily.
 
 ## Deadline
-- You’ll have up to a week from now onwards to finish it. Any submissions later on won’t be evaluated.
- Remember that we do not evaluate how fast you code: we will measure your code quality.
+- Take up to a week to finish it.
+
 
 ## More information
 ### The GitHub API documentation
