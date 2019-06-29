@@ -5,13 +5,8 @@ Each section may have one or more **sub-section**, for example, there is a **Spr
 Please feel free to use them if you want to and if you've got a few juicy ones then add them!
 
 # Techie
-* ### Algorithms
-* ### C++
-* ### C#
-* ### Groovy
+* ### [Create a Github-Twitter Client App](create-github-twitter-app/README.md)
 * ### [Java](java/README.md)
-* ### JavaScript
-* ### Python
 * ### [Scala](scala/README.md)
 
 # Non-Techie
