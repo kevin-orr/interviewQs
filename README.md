@@ -5,7 +5,7 @@ Each section may have one or more **sub-section**, for example, there is a **Spr
 Please feel free to use them if you want to and if you've got a few juicy ones then add them!
 
 # Techie
-* ### [Create a Github-Twitter Client App](create-github-twitter-app/README.md)
+* ### [Github-Twitter Mashup App](github-twitter-mashup-app/README.md)
 * ### [Java](java/README.md)
 * ### [Scala](scala/README.md)
 
