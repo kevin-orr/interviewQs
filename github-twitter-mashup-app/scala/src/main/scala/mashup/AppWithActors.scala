@@ -13,10 +13,6 @@ import scala.util.{Failure, Success}
   */
 object AppWithActors {
 
-  type AppConfig = Map[String, Any]
-
-  implicit val appConfig: AppConfig = getConfigProps
-
   def main(args: Array[String]): Unit = {
 
     val banner =
@@ -48,14 +44,6 @@ object AppWithActors {
       // no tasks to execute - yet!
     }
 
-  }
-
-  def getConfigProps: AppConfig = {
-    var props = loadConfigFile() match {
-      case Success(configProps) => configProps
-      case Failure(msg) => println(msg); System.exit(0)
-    }
-    props.asInstanceOf[AppConfig]
   }
 
   // We could do more logging of metrics here perhaps
