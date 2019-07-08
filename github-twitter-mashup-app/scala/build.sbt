@@ -6,11 +6,11 @@ scalaVersion := "2.12.7"
 
 exportJars := true
 
-mainClass in (Compile, packageBin) := Some("mashup.App")
+mainClass in (Compile, packageBin) := Some("mashup.AppWithActors")
 
 // set the main class for the main 'run' task
 // change Compile to Test to set it for 'test:run'
-mainClass in (Compile, run) := Some("mashup.App")
+mainClass in (Compile, run) := Some("mashup.AppWithActors")
 
 
 resolvers += "Maven central" at "http://repo1.maven.org/maven2/"
