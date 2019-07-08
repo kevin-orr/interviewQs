@@ -1,0 +1,1 @@
+Built against Scala 2.12 running JDK 8.
