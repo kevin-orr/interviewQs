@@ -1,0 +1,4 @@
+/target
+/project
+#.*ignore
+twits-*.json
