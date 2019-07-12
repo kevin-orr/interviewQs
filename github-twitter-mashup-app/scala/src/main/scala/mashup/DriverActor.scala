@@ -15,7 +15,7 @@ class DriverActor(count: Int)
 
     // received command to print results as json
     case PrintJson => ConfigAndFileUtils.saveJsonToFile(metrics)
-    // received command to print results as json to a specific file
+    // received command to print results as json but to a specific file
     case PrintJson(filename) => ConfigAndFileUtils.saveJsonToFile(metrics, filename)
     // ok, received signal to add a bunch of tweet info about a project to sate
     case projectTweets: ProjectTweetsInfo => metrics = (projectTweets :: metrics); sender ! Quit

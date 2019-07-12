@@ -1,6 +1,7 @@
 package mashup
 
 import mashup.ConfigAndFileUtils.loadConfigFile
+import mashup.Protocol._
 
 import java.util.concurrent.{CountDownLatch, TimeUnit}
 
@@ -56,6 +57,24 @@ object AppWithActors {
 
       import AppImplicitsAndConfig._
 
+      val driver = system.actorOf(DriverActor.props(maxNumOfProjects), name = "driver")
+
+      val github = system.actorOf(GitHubActor.props(driver)(maxNumOfProjects)(doneSignal), name = "github")
+
+      val githubProject = appConfig("github.project").asInstanceOf[String]
+
+      // lets get the list of Reactive project names from github and fire off the search of twitter
+      github ! SearchGitHubFor(githubProject)
+
+      println(s"The App will wait at most ${appConfig("timeout").toString.toInt} seconds (see config.properties) to gather responses before shutting down.")
+
+      // main app has to wait until either it gets a signal that all work is donw or we timeout waiting for results
+      // even if we timeout we may have got some (mabe not all) results
+      doneSignal.await(appConfig("timeout").toString.toInt, TimeUnit.SECONDS)
+
+      driver ! PrintJson
+
+      system.terminate()
     }
 
   }
