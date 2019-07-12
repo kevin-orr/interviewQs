@@ -8,6 +8,8 @@ Thought I'd completely over-engineer this by using Actors, as you do!
 
 - Akka 2.5.12
 
+- twitter4s
+
 - Include sample output from a run of app [here](./twits-2019-07-12T17:14:51.296+01:00.json).
 
 - Include some noddy tests
