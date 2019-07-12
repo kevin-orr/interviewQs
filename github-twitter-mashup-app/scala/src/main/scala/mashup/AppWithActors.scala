@@ -2,6 +2,8 @@ package mashup
 
 import mashup.ConfigAndFileUtils.loadConfigFile
 
+import java.util.concurrent.{CountDownLatch, TimeUnit}
+
 import scala.util.{Failure, Success}
 
 
@@ -17,31 +19,43 @@ object AppWithActors {
 
     val banner =
       """
-    ===========================================================================================
-        This App will search Github for top 10 'Reactive' projects (by default) then for each
-        project it will then search for a few of the most recent tweets that mention that project.
+    ===============================================================================================
+        This App will search Github for the top 10 'Reactive' (by default) projects, then for each
+        project it will search for a few of the most recent tweets that mention that project.
 
-        You can configure the App via the configuration file 'properties.config' which the App will
+        You can configure the App via the configuration file 'config.properties' which the App will
         look for in same directory that the uber jar lives.
 
         You can configure the following details:
-            # The Twitter consumer and access tokens
+            # The Twitter consumer and access tokens - these are required to run app
             consumer.token.key=???
             consumer.token.secret=???
             access.token.key=???
             access.token.secret=???
-            # A project name to search GitHub - defaul is 'Reactive'
+            # A project name to search GitHub - optional - defaul is 'Reactive'
             github.project=Reactive
+            # A timeout, in seconds, to wait for all results to come back - optional - default is 30 
+            app.wait.timeout=20 
+            
 
-        When complete any response will be written to 'twits.json' in same directory.
+        When complete any response will be written to 'twits-<timestamp>.json' in same directory, 
+        for example: twits-2018-12-03T21:16:39.741Z.json
 
-    ===========================================================================================
+    =================================================================================================
         """.stripMargin
 
     println(banner)
 
     withTiming {
-      // no tasks to execute - yet!
+      // no. of projects
+      val maxNumOfProjects = 10
+
+      // as we're running as fire and forget once off app we need a way to sync up all twitter responses
+      // so that we're not hanging around for 30 secs or whatever
+      val doneSignal = new CountDownLatch(maxNumOfProjects)
+
+      import AppImplicitsAndConfig._
+
     }
 
   }
